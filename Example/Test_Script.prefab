@@ -56,12 +56,16 @@ MonoBehaviour:
   - POISON
   stringArrayPopup: IMPACT
   enumMembersPopup: EXPLOSION
-  sceneNamesPopup: Test
+  sceneNamesPopup: SampleScene
   material: {fileID: 0}
   materialPropertiesNames: ERROR
   animator: {fileID: 0}
   animatorStatesNames: ERROR
   AnimatorParametersNames: ERROR
+  typeFieldsNames: m_CancellationTokenSource
+  typePropertiesNames: destroyCancellationToken
+  typeEventsNames: NO_VALUE
+  typeMethodsNames: get_rigidbody2D
 --- !u!1 &2065326255576854676
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,12 +121,16 @@ MonoBehaviour:
   - POISON
   stringArrayPopup: IMPACT
   enumMembersPopup: EXPLOSION
-  sceneNamesPopup: Test
+  sceneNamesPopup: SampleScene
   material: {fileID: 0}
   materialPropertiesNames: ERROR
   animator: {fileID: 0}
   animatorStatesNames: ERROR
   AnimatorParametersNames: ERROR
+  typeFieldsNames: m_CancellationTokenSource
+  typePropertiesNames: destroyCancellationToken
+  typeEventsNames: NO_VALUE
+  typeMethodsNames: get_destroyCancellationToken
 --- !u!1 &4041092011463332753
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,12 +188,16 @@ MonoBehaviour:
   - POISON
   stringArrayPopup: FREEZE
   enumMembersPopup: CORROSIVE
-  sceneNamesPopup: Test
+  sceneNamesPopup: SampleScene
   material: {fileID: 2100000, guid: 106f3ff43a17d4967a2b64c7a92e49ec, type: 2}
-  materialPropertiesNames: _ZTest
-  animator: {fileID: 0}
-  animatorStatesNames: ERROR
-  AnimatorParametersNames: ERROR
+  materialPropertiesNames: ERROR
+  animator: {fileID: 8744940105308393382}
+  animatorStatesNames: Idle,0
+  AnimatorParametersNames: Fly Forward
+  typeFieldsNames: m_CancellationTokenSource
+  typePropertiesNames: destroyCancellationToken
+  typeEventsNames: NO_VALUE
+  typeMethodsNames: get_destroyCancellationToken
 --- !u!95 &8744940105308393382
 Animator:
   serializedVersion: 7

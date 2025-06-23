@@ -1,7 +1,21 @@
 using UnityEngine;
+using System.Reflection;
 
 public abstract class StringPopupAttribute : PropertyAttribute
 {
+    public BindingFlags BindingFlags
+    {
+        get
+        {
+            return m_bindingFlags;
+        }
+        set
+        {
+            m_bindingFlags = value;
+        }
+    }
+    private BindingFlags m_bindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
+
     protected string[] m_options;
 
     public string[] GetOptions(UnityEngine.Object targetObject)

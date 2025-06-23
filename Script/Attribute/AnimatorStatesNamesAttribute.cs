@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
-using UnityEditor.Animations;
 
 public class AnimatorStatesNamesAttribute : StringPopupAttribute
 {
@@ -17,26 +14,28 @@ public class AnimatorStatesNamesAttribute : StringPopupAttribute
 
     protected override void GetOptionsInternal(UnityEngine.Object targetObject)
     {
-        object obj = targetObject.GetType().GetField(m_animatorName, BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+        #if UNITY_EDITOR
+
+        object obj = targetObject.GetType().GetField(m_animatorName, BindingFlags)
         .GetValue(targetObject);
 
-        AnimatorController animatorController;
+        UnityEditor.Animations.AnimatorController animatorController;
         if(obj is Animator)
         {
-            animatorController = (obj as Animator).runtimeAnimatorController as AnimatorController;
+            animatorController = (obj as Animator).runtimeAnimatorController as UnityEditor.Animations.AnimatorController;
         }
         else
         {
-            animatorController = obj as AnimatorController;
+            animatorController = obj as UnityEditor.Animations.AnimatorController;
         }
 
         List<string> statesLayers = new List<string>();
-        AnimatorControllerLayer[] animatorControllerLayer = animatorController.layers;
+        UnityEditor.Animations.AnimatorControllerLayer[] animatorControllerLayer = animatorController.layers;
         int layer;
 
-        void AddStatesInStateMachine(AnimatorStateMachine animatorStateMachine)
+        void AddStatesInStateMachine(UnityEditor.Animations.AnimatorStateMachine animatorStateMachine)
         {
-            foreach(ChildAnimatorState childAnimatorState in animatorStateMachine.states)
+            foreach(UnityEditor.Animations.ChildAnimatorState childAnimatorState in animatorStateMachine.states)
             {
                 if(char.IsControl(m_stateLayerDelimiter))
                 {
@@ -48,7 +47,7 @@ public class AnimatorStatesNamesAttribute : StringPopupAttribute
                 }
             }
 
-            foreach(ChildAnimatorStateMachine childAnimatorStateMachine in animatorStateMachine.stateMachines)
+            foreach(UnityEditor.Animations.ChildAnimatorStateMachine childAnimatorStateMachine in animatorStateMachine.stateMachines)
             {
                 AddStatesInStateMachine(childAnimatorStateMachine.stateMachine);
             }
@@ -60,5 +59,7 @@ public class AnimatorStatesNamesAttribute : StringPopupAttribute
         }
         
         m_options = statesLayers.ToArray();
+
+        #endif
     }
 }

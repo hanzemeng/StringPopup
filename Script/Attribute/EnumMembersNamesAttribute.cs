@@ -1,10 +1,10 @@
 using System;
 
-public class EnumMembersPopupAttribute : StringPopupAttribute
+public class EnumMembersNamesAttribute : StringPopupAttribute
 {
     protected Type m_classType;
 
-    public EnumMembersPopupAttribute(Type classType)
+    public EnumMembersNamesAttribute(Type classType)
     {
         m_classType = classType;
     }

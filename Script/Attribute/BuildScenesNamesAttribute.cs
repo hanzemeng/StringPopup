@@ -1,9 +1,9 @@
 using System.IO;
 using UnityEngine.SceneManagement;
 
-public class SceneNamesPopupAttribute : StringPopupAttribute
+public class BuildScenesNamesAttribute : StringPopupAttribute
 {
-    public SceneNamesPopupAttribute(){}
+    public BuildScenesNamesAttribute(){}
 
     protected override void GetOptionsInternal(UnityEngine.Object targetObject)
     {

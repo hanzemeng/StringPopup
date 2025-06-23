@@ -1,5 +1,3 @@
-using System;
-using System.Reflection;
 using UnityEngine;
 
 public class MaterialPropertiesNamesAttribute : StringPopupAttribute
@@ -13,7 +11,7 @@ public class MaterialPropertiesNamesAttribute : StringPopupAttribute
 
     protected override void GetOptionsInternal(UnityEngine.Object targetObject)
     {
-        object obj = targetObject.GetType().GetField(m_materialName, BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+        object obj = targetObject.GetType().GetField(m_materialName, BindingFlags)
         .GetValue(targetObject);
 
         Shader shader;

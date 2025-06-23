@@ -1,4 +1,3 @@
-using System.Reflection;
 using UnityEngine;
 
 public class AnimatorParametersNamesAttribute : StringPopupAttribute
@@ -12,7 +11,7 @@ public class AnimatorParametersNamesAttribute : StringPopupAttribute
 
     protected override void GetOptionsInternal(UnityEngine.Object targetObject)
     {
-        object obj = targetObject.GetType().GetField(m_animatorName, BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+        object obj = targetObject.GetType().GetField(m_animatorName, BindingFlags)
         .GetValue(targetObject);
 
         Animator animator = obj as Animator;

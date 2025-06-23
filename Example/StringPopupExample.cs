@@ -25,7 +25,7 @@ public class StringArrayContainer
 public class StringPopupExample : MonoBehaviour
 {
     // Example of a popup for a static string array.
-    [StringArrayPopup( nameof(StringArrayContainer.staticStringArray), typeof(StringArrayContainer))] public string staticStringArrayPopup;
+    [StringArrayElements(nameof(StringArrayContainer.staticStringArray), typeof(StringArrayContainer))] public string staticStringArrayPopup;
 
     // Example of a popup for a string array. Note that the array and the attribute must be defined in the same class.
     private const string IMPACT = nameof(IMPACT);
@@ -45,8 +45,9 @@ public class StringPopupExample : MonoBehaviour
         ELECTRICITY,
         POISON,
     };
-    [StringArrayPopup(nameof(stringArray))] public string stringArrayPopup;
+    [StringArrayElements(nameof(stringArray))] public string stringArrayPopup;
 
+    // Example of a popup for the enum members names. The Enum can be defined anywhere.
     public enum Enum
     {
         EXPLOSION,
@@ -56,10 +57,10 @@ public class StringPopupExample : MonoBehaviour
         RADIATION,
         VIRAL,
     }
-    [EnumMembersPopup(typeof(Enum))] public string enumMembersPopup;
+    [EnumMembersNames(typeof(Enum))] public string enumMembersPopup;
 
     // Example of a popup for the scene names in the build settings. After modifying the build settings, be sure to refresh the project so the popup can be updated.
-    [SceneNamesPopup] public string sceneNamesPopup;
+    [BuildScenesNames] public string sceneNamesPopup;
 
     // Example of a popup for the reference names in a material's shader. Note that the material and the attribute must be defined in the same class.
     // Technically this attribute takes in the name of a shader, not the name of a material that uses the shader.
@@ -74,4 +75,10 @@ public class StringPopupExample : MonoBehaviour
 
     // Example of a popup for the parameters names in an animator.  Note that the Animator and the attribute must be defined in the same class.
     [AnimatorParametersNames(nameof(animator))] public string AnimatorParametersNames;
+
+    // Example of popups for the members names in MonoBehaviour.
+    [TypeMembersNames(typeof(MonoBehaviour), TypeMembersNamesAttribute.MemberType.FIELD)] public string typeFieldsNames;
+    [TypeMembersNames(typeof(MonoBehaviour), TypeMembersNamesAttribute.MemberType.PROPERTY)] public string typePropertiesNames;
+    [TypeMembersNames(typeof(MonoBehaviour), TypeMembersNamesAttribute.MemberType.EVENTS)] public string typeEventsNames;
+    [TypeMembersNames(typeof(MonoBehaviour), TypeMembersNamesAttribute.MemberType.METHOD, BindingFlags = System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public)] public string typeMethodsNames;
 }
