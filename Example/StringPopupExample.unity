@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082a22a6936694ed58ebed43bd6a1852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staticStringArrayPopup: SABER
+  stringArrayElementsStatic: SABER
   stringArray:
   - IMPACT
   - SLASH
@@ -416,18 +416,18 @@ MonoBehaviour:
   - FREEZE
   - ELECTRICITY
   - POISON
-  stringArrayPopup: IMPACT
-  enumMembersPopup: EXPLOSION
-  sceneNamesPopup: SampleScene
+  stringArrayElements: IMPACT
+  enumMembersNames: EXPLOSION
+  buildScenesNames: SampleScene
   material: {fileID: 2100000, guid: a8ff170b3748441c5b1b8035edebe64b, type: 2}
   materialPropertiesNames: _WorkflowMode
   animator: {fileID: 904329578}
   animatorStatesNames: Idle,0
-  AnimatorParametersNames: Fly Forward
+  animatorParametersNames: Fly Forward
   typeFieldsNames: m_CancellationTokenSource
-  typePropertiesNames: name
+  typePropertiesNames: animation
   typeEventsNames: NO_VALUE
-  typeMethodsNames: get_destroyCancellationToken
+  typeMethodsNames: TryGetComponent
 --- !u!95 &904329578
 Animator:
   serializedVersion: 7

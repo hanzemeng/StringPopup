@@ -25,7 +25,7 @@ public class StringArrayContainer
 public class StringPopupExample : MonoBehaviour
 {
     // Example of a popup for a static string array.
-    [StringArrayElements(nameof(StringArrayContainer.staticStringArray), typeof(StringArrayContainer))] public string staticStringArrayPopup;
+    [StringArrayElements(nameof(StringArrayContainer.staticStringArray), typeof(StringArrayContainer))] public string stringArrayElementsStatic;
 
     // Example of a popup for a string array. Note that the array and the attribute must be defined in the same class.
     private const string IMPACT = nameof(IMPACT);
@@ -45,7 +45,7 @@ public class StringPopupExample : MonoBehaviour
         ELECTRICITY,
         POISON,
     };
-    [StringArrayElements(nameof(stringArray))] public string stringArrayPopup;
+    [StringArrayElements(nameof(stringArray))] public string stringArrayElements;
 
     // Example of a popup for the enum members names. The Enum can be defined anywhere.
     public enum Enum
@@ -57,10 +57,10 @@ public class StringPopupExample : MonoBehaviour
         RADIATION,
         VIRAL,
     }
-    [EnumMembersNames(typeof(Enum))] public string enumMembersPopup;
+    [EnumMembersNames(typeof(Enum))] public string enumMembersNames;
 
     // Example of a popup for the scene names in the build settings. After modifying the build settings, be sure to refresh the project so the popup can be updated.
-    [BuildScenesNames] public string sceneNamesPopup;
+    [BuildScenesNames] public string buildScenesNames;
 
     // Example of a popup for the reference names in a material's shader. Note that the material and the attribute must be defined in the same class.
     // Technically this attribute takes in the name of a shader, not the name of a material that uses the shader.
@@ -74,7 +74,7 @@ public class StringPopupExample : MonoBehaviour
     [AnimatorStatesNames(nameof(animator), ',')] public string animatorStatesNames;
 
     // Example of a popup for the parameters names in an animator.  Note that the Animator and the attribute must be defined in the same class.
-    [AnimatorParametersNames(nameof(animator))] public string AnimatorParametersNames;
+    [AnimatorParametersNames(nameof(animator))] public string animatorParametersNames;
 
     // Example of popups for the members names in MonoBehaviour.
     [TypeMembersNames(typeof(MonoBehaviour), TypeMembersNamesAttribute.MemberType.FIELD)] public string typeFieldsNames;
