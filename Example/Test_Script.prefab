@@ -66,6 +66,9 @@ MonoBehaviour:
   typePropertiesNames: destroyCancellationToken
   typeEventsNames: NO_VALUE
   typeMethodsNames: get_rigidbody2D
+  audioMixer: {fileID: 0}
+  audioMixerExposedParameters: ERROR
+  objectSerializedPropertiesNames: ERROR
 --- !u!1 &2065326255576854676
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +134,9 @@ MonoBehaviour:
   typePropertiesNames: destroyCancellationToken
   typeEventsNames: NO_VALUE
   typeMethodsNames: get_destroyCancellationToken
+  audioMixer: {fileID: 0}
+  audioMixerExposedParameters: ERROR
+  objectSerializedPropertiesNames: ERROR
 --- !u!1 &4041092011463332753
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +204,9 @@ MonoBehaviour:
   typePropertiesNames: destroyCancellationToken
   typeEventsNames: NO_VALUE
   typeMethodsNames: get_destroyCancellationToken
+  audioMixer: {fileID: 0}
+  audioMixerExposedParameters: ERROR
+  objectSerializedPropertiesNames: ERROR
 --- !u!95 &8744940105308393382
 Animator:
   serializedVersion: 7

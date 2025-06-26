@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class StringArrayContainer
 {
@@ -67,13 +68,13 @@ public class StringPopupExample : MonoBehaviour
     public Material material;
     [MaterialPropertiesNames(nameof(material))] public string materialPropertiesNames;
 
-    // Example of a popup for the states names in an animator.  Note that the Animator and the attribute must be defined in the same class.
+    // Example of a popup for the states names in an animator. Note that the Animator and the attribute must be defined in the same class.
     // Technically this attribute takes in the name of an animator controller, not the name of an animator that uses the animator controller.
     // One may want to specify the delimiter between the state name and the layer number. If the delimiter is a control character, only the state name appears in the popup.
     public Animator animator;
     [AnimatorStatesNames(nameof(animator), ',')] public string animatorStatesNames;
 
-    // Example of a popup for the parameters names in an animator.  Note that the Animator and the attribute must be defined in the same class.
+    // Example of a popup for the parameters names in an animator. Note that the Animator and the attribute must be defined in the same class.
     [AnimatorParametersNames(nameof(animator))] public string animatorParametersNames;
 
     // Example of popups for the members names in MonoBehaviour.
@@ -81,4 +82,11 @@ public class StringPopupExample : MonoBehaviour
     [TypeMembersNames(typeof(MonoBehaviour), TypeMembersNamesAttribute.MemberType.PROPERTY)] public string typePropertiesNames;
     [TypeMembersNames(typeof(MonoBehaviour), TypeMembersNamesAttribute.MemberType.EVENTS)] public string typeEventsNames;
     [TypeMembersNames(typeof(MonoBehaviour), TypeMembersNamesAttribute.MemberType.METHOD, BindingFlags = System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public)] public string typeMethodsNames;
+
+    // Example of popups for the exposed parameters in audioMixer. Note that the AudioMixer and the attribute must be defined in the same class.
+    public AudioMixer audioMixer;
+    [AudioMixerExposedParameters(nameof(audioMixer))] public string audioMixerExposedParameters;
+
+    // Example of popups for serialized properties names in UnityEngine.Object. Note that the UnityEngine.Object and the attribute must be defined in the same class.
+    [ObjectSerializedPropertiesNames(nameof(audioMixer))] public string objectSerializedPropertiesNames;
 }
