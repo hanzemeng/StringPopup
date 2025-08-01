@@ -12,6 +12,7 @@ public class StringPopupAttributeDrawer : PropertyDrawer
     {
         StringPopupAttribute stringDropdownAttribute = attribute as StringPopupAttribute;
         string[] options = stringDropdownAttribute.GetOptions(property.serializedObject.targetObject);
+
         string oldStr = property.stringValue;
         int oldIndex = Array.FindIndex(options, i=>string.Equals(i, oldStr));
         if(oldIndex < 0)
@@ -41,8 +42,13 @@ public class StringPopupAttributeDrawer : PropertyDrawer
             }
         }
 
+        EditorGUI.showMixedValue = property.hasMultipleDifferentValues;
         int newIndex = EditorGUI.Popup(position, label.text, oldIndex, options);
-        property.stringValue = options[newIndex];
+        EditorGUI.showMixedValue = false;
+        if(newIndex != oldIndex)
+        {
+            property.stringValue = options[newIndex];
+        }
     }
 }
 
