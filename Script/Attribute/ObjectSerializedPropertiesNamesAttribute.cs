@@ -28,9 +28,11 @@ public class ObjectSerializedPropertiesNamesAttribute : StringPopupAttribute
         UnityEditor.SerializedProperty it = serializedObject.GetIterator();
 
         List<string> serializedPropertiesNames = new List<string>();
-        while(it.Next(true))
+        bool enterChildren = true;
+        while(it.Next(enterChildren))
         {
             serializedPropertiesNames.Add(it.propertyPath);
+            enterChildren = it.propertyType != UnityEditor.SerializedPropertyType.String;
         }
 
         m_options = serializedPropertiesNames.ToArray();

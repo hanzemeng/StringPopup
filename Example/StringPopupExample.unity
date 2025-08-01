@@ -293,7 +293,7 @@ MonoBehaviour:
   typeMethodsNames: get_rigidbody
   audioMixer: {fileID: 24100000, guid: 853b4ad42214841c98ab60a2b70fca3d, type: 2}
   audioMixerExposedParameters: SoundEffectVolume
-  objectSerializedPropertiesNames: m_UpdateMode
+  objectSerializedPropertiesNames: m_Name
 --- !u!95 &20611653
 Animator:
   serializedVersion: 7
@@ -521,7 +521,7 @@ MonoBehaviour:
   typeMethodsNames: get_destroyCancellationToken
   audioMixer: {fileID: 24100000, guid: 853b4ad42214841c98ab60a2b70fca3d, type: 2}
   audioMixerExposedParameters: SoundEffectPitch
-  objectSerializedPropertiesNames: m_UpdateMode
+  objectSerializedPropertiesNames: m_Name
 --- !u!95 &904329578
 Animator:
   serializedVersion: 7
